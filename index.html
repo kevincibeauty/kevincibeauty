@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kevinci Beauty Nails · Las Vegas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kevinci Beauty Nails · Luxury Gel X, structured manicures, nail art, and pedicures in Las Vegas." />
+  <style>
+    :root {
+      --bg-main: #f5efe9;
+      --bg-light: #faf7f3;
+      --bg-wood: #d9c7b8;
+      --bg-stone: #d8d5d0;
+      --text-main: #1a1a1a;
+      --text-muted: #6b635c;
+      --accent-dark: #0d0d0d;
+      --accent-soft: #c7b29a;
+      --radius-card: 18px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section {
+      padding: 64px 20px;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 72px 20px 56px;
+      background: radial-gradient(circle at top left, #fffaf3 0%, #f5efe9 40%, #e7dbcf 100%);
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: 2.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .hero-subtitle {
+      margin-top: 18px;
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 460px;
+    }
+
+    .hero-meta {
+      margin-top: 22px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-soft);
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent-dark);
+      color: #ffffff;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-secondary {
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(13, 13, 13, 0.18);
+      background: rgba(250, 247, 243, 0.8);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-image-card {
+      background: linear-gradient(145deg, #fdf7f1, #e7dbcf);
+      border-radius: 26px;
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hero-image-placeholder {
+      background: radial-gradient(circle at 20% 0%, #fffaf5 0%, #f0e3d6 40%, #c9b29f 100%);
+      border-radius: 22px;
+      padding: 18px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hand-visual {
+      width: 72%;
+      max-width: 320px;
+      aspect-ratio: 3 / 4;
+      border-radius: 26px;
+      background: linear-gradient(160deg, #c89b7a 0%, #b68463 40%, #9a6a4c 100%);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.25);
+      position: relative;
+    }
+
+    .hand-visual::before {
+      content: "";
+      position: absolute;
+      inset: 12% 18%;
+      border-radius: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .hand-visual::after {
+      content: "";
+      position: absolute;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 68%;
+      height: 26%;
+      border-radius: 999px;
+      background: radial-gradient(circle at 50% 0%, #ffe9d7 0%, #f5cbb0 40%, #e3a98a 100%);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-image-caption {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .tag-pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(250, 247, 243, 0.9);
+      border: 1px solid rgba(217, 199, 184, 0.6);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .services-grid {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--bg-light);
+      border-radius: var(--radius-card);
+      padding: 16px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service-image {
+      background: radial-gradient(circle at 0% 0%, #fffaf5 0%, #f0e3d6 40%, #c9b29f 100%);
+      border-radius: 14px;
+      height: 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-image::after {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .service-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .service-text {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .service-meta {
+      margin-top: auto;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-soft);
+    }
+
+    .service-actions {
+      margin-top: 10px;
+    }
+
+    .btn-small {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(13, 13, 13, 0.18);
+      background: #ffffff;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .why {
+      background: var(--bg-light);
+    }
+
+    .why-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .why-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .why-item {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .why-item::before {
+      content: "• ";
+      color: var(--accent-soft);
+    }
+
+    .why-card {
+      background: var(--bg-wood);
+      border-radius: var(--radius-card);
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+      color: #2b2520;
+    }
+
+    .gallery {
+      background: var(--bg-main);
+    }
+
+    .gallery-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-item {
+      background: radial-gradient(circle at 0% 0%, #fffaf5 0%, #f0e3d6 40%, #c9b29f 100%);
+      border-radius: 18px;
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 16%;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .gallery-caption {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .booking {
+      background: var(--bg-wood);
+    }
+
+    .booking-card {
+      background: rgba(250, 247, 243, 0.96);
+      border-radius: 22px;
+      padding: 22px 20px;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .booking-title {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .booking-text {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .booking-meta {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-soft);
+    }
+
+    .booking-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .booking-visual {
+      background: radial-gradient(circle at 0% 0%, #fffaf5 0%, #f0e3d6 40%, #c9b29f 100%);
+      border-radius: 18px;
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking-visual::after {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    footer {
+      background: var(--accent-dark);
+      color: #ffffff;
+      padding: 26px 20px 32px;
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.86rem;
+    }
+
+    .footer-brand {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.82rem;
+    }
+
+    .footer-meta {
+      color: #c9c4bd;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-link {
+      color: #f5efe9;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .why-grid,
+      .booking-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section {
+        padding: 48px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-meta">Las Vegas · Nail Studio</div>
+          <h1 class="hero-title">Kevinci Beauty Nails</h1>
+          <p class="hero-subtitle">
+            Modern nail artistry in Las Vegas — luxury Gel X, structured manicures, nail art, and pedicures crafted with intention, comfort, and long‑wear in mind.
+          </p>
+          <div class="hero-actions">
+            <a href="https://your-setmore-link-here.com" class="btn-primary">
+              Book Nails
+              <span>→</span>
+            </a>
+            <a href="#services" class="btn-secondary">
+              View Services
+            </a>
+          </div>
+          <p class="hero-note">
+            Medium‑tone hand models · Warm beige palette · Soft wood accents · Luxury, modern, minimal Kevinci Beauty aesthetic.
+          </p>
+        </div>
+        <div class="hero-image-card">
+          <div class="hero-image-placeholder" aria-label="AI placeholder visual of a medium‑tone hand with modern Gel X nails in a warm beige, luxury aesthetic.">
+            <div class="hand-visual"></div>
+          </div>
+          <div class="hero-image-caption">
+            AI‑styled placeholder visual representing Kevinci Beauty’s luxury Gel X and structured manicure aesthetic.
+            <div class="hero-tags">
+              <span class="tag-pill">Gel X</span>
+              <span class="tag-pill">Structured Mani</span>
+              <span class="tag-pill">Nail Art</span>
+              <span class="tag-pill">Pedicure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="section-inner">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">
+          A curated menu focused on long‑wear, clean prep, and modern shapes — designed for clients who love intentional, luxury nail care.
+        </p>
+
+        <div class="services-grid">
+          <!-- Gel X -->
+          <article class="service-card">
+            <div class="service-image" aria-label="AI placeholder visual representing modern Gel X extensions in a warm beige, luxury aesthetic."></div>
+            <h3 class="service-title">Gel X Extensions</h3>
+            <p class="service-text">
+              Lightweight, sculpted extensions with modern shapes and a clean, seamless finish. Ideal for clients who love length without bulk.
+            </p>
+            <div class="service-meta">Gel X · Modern shapes</div>
+            <div class="service-actions">
+              <a href="https://your-setmore-link-here.com" class="btn-small">Book Gel X →</a>
+            </div>
+          </article>
+
+          <!-- Structured Manicure -->
+          <article class="service-card">
+            <div class="service-image" aria-label="AI placeholder visual representing a structured manicure with builder gel on natural nails."></div>
+            <h3 class="service-title">Structured Manicure</h3>
+            <p class="service-text">
+              Builder gel focused on strength, apex, and cuticle detail — perfect for clients who want natural‑length nails that feel secure and polished.
+            </p>
+            <div class="service-meta">Builder gel · Natural nails</div>
+            <div class="service-actions">
+              <a href="https://your-setmore-link-here.com" class="btn-small">Book Structured Mani →</a>
+            </div>
+          </article>
+
+          <!-- Nail Art -->
+          <article class="service-card">
+            <div class="service-image" aria-label="AI placeholder visual representing modern nail art with abstract, chrome, and freestyle designs."></div>
+            <h3 class="service-title">Nail Art</h3>
+            <p class="service-text">
+              Tiered nail art options from minimal line work to full freestyle sets — chrome, abstract, soft glam, and editorial‑inspired designs.
+            </p>
+            <div class="service-meta">Simple · Detailed · Freestyle</div>
+            <div class="service-actions">
+              <a href="https://your-setmore-link-here.com" class="btn-small">Book Nail Art →</a>
+            </div>
+          </article>
+
+          <!-- Pedicure -->
+          <article class="service-card">
+            <div class="service-image" aria-label="AI placeholder visual representing a spa‑style pedicure in a warm, neutral aesthetic."></div>
+            <h3 class="service-title">Pedicures</h3>
+            <p class="service-text">
+              Clean, relaxing pedicures with a focus on comfort, detail, and a soft, polished finish — ideal for clients who love a full experience.
+            </p>
+            <div class="service-meta">Spa‑inspired · Clean finish</div>
+            <div class="service-actions">
+              <a href="https://your-setmore-link-here.com" class="btn-small">Book Pedicure →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CLIENTS LOVE US -->
+    <section class="section why">
+      <div class="section-inner">
+        <h2 class="section-title">Why Clients Love Kevinci Beauty</h2>
+        <div class="why-grid">
+          <div>
+            <p class="section-subtitle">
+              Kevinci Beauty is built for clients who care about detail — from cuticle prep and shaping to long‑wear structure and modern, minimal design.
+            </p>
+            <div class="why-list">
+              <div class="why-item">Long‑wear Gel X and builder gel</div>
+              <div class="why-item">Clean prep, shaping, and cuticle work</div>
+              <div class="why-item">Modern, luxury‑driven aesthetic</div>
+              <div class="why-item">Intentional nail art and design</div>
+            </div>
+          </div>
+          <div class="why-card">
+            <strong>Studio Vibe:</strong><br />
+            Warm beige, soft wood, and stone neutrals — a calm, modern space that feels like a luxury lounge, not a rushed salon.<br /><br />
+            <strong>Experience:</strong><br />
+            One‑on‑one focus, clear communication, and a service menu designed around comfort, longevity, and the details that matter.<br /><br />
+            <strong>Location:</strong><br />
+            Las Vegas, NV · Nail studio inspired by modern hospitality and soft glam.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery">
+      <div class="section-inner">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">
+          AI‑styled placeholders representing Kevinci Beauty’s future sets — Gel X, structured manicures, nail art, and pedicures in a cohesive, warm‑neutral palette.
+        </p>
+
+        <div class="gallery-grid">
+          <div>
+            <div class="gallery-item" aria-label="AI placeholder visual representing a modern Gel X set in warm neutrals on a medium‑tone hand."></div>
+            <div class="gallery-caption">Modern Gel X · Medium‑tone hand · Warm neutrals</div>
+          </div>
+          <div>
+            <div class="gallery-item" aria-label="AI placeholder visual representing a structured manicure with soft, natural length."></div>
+            <div class="gallery-caption">Structured manicure · Natural length · Soft glam</div>
+          </div>
+          <div>
+            <div class="gallery-item" aria-label="AI placeholder visual representing abstract nail art with chrome and soft beige tones."></div>
+            <div class="gallery-caption">Abstract nail art · Chrome · Beige palette</div>
+          </div>
+          <div>
+            <div class="gallery-item" aria-label="AI placeholder visual representing a spa‑style pedicure in a warm, neutral setting."></div>
+            <div class="gallery-caption">Pedicure · Spa‑inspired · Neutral setting</div>
+          </div>
+          <div>
+            <div class="gallery-item" aria-label="AI placeholder visual representing a full freestyle set with modern shapes."></div>
+            <div class="gallery-caption">Freestyle set · Modern shapes · Editorial feel</div>
+          </div>
+          <div>
+            <div class="gallery-item" aria-label="AI placeholder visual representing a cohesive hand and foot combo in warm beige tones."></div>
+            <div class="gallery-caption">Hand + foot combo · Warm beige · Soft wood</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <section class="section booking">
+      <div class="section-inner">
+        <div class="booking-card">
+          <div>
+            <div class="booking-title">Book Your Next Set</div>
+            <p class="booking-text">
+              Booking takes less than a minute. Choose your service, pick your time, and arrive knowing every detail has been considered — from prep to finish.
+            </p>
+            <div class="booking-meta">
+              Gel X · Structured Manicure · Nail Art · Pedicures
+            </div>
+            <div class="booking-actions">
+              <a href="https://your-setmore-link-here.com" class="btn-primary">
+                Find Time
+                <span>→</span>
+              </a>
+              <a href="#services" class="btn-secondary">
+                View Service Menu
+              </a>
+            </div>
+          </div>
+          <div class="booking-visual" aria-label="AI placeholder visual representing a modern booking card aesthetic with warm beige and soft wood tones."></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">Kevinci Beauty Nails</div>
+          <div class="footer-meta">
+            Las Vegas, NV · Modern, luxury nail artistry · Gel X · Structured manicures · Nail art · Pedicures
+          </div>
+        </div>
+        <div class="footer-links">
+          <span class="footer-link">@kevincibeauty</span>
+          <a href="https://your-setmore-link-here.com" class="footer-link">Book via Setmore</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
