@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kevinci Beauty Nails · Las Vegas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kevinci Beauty Nails · Luxury Gel X, structured manicures, nail art, and pedicures in Las Vegas." />
+
+  <style>
+    :root {
+      --beige: #f5efe9;
+      --light: #faf7f3;
+      --wood: #d9c7b8;
+      --text: #1a1a1a;
+      --muted: #6b635c;
+      --accent: #0d0d0d;
+      --soft: #c7b29a;
+      --radius: 18px;
+      --shadow: 0 18px 40px rgba(0,0,0,0.08);
+      --max: 1100px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--beige);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .section { padding: 60px 20px; }
+    .inner { max-width: var(--max); margin: 0 auto; }
+
+    /* HERO */
+    .hero {
+      padding: 80px 20px;
+      background: radial-gradient(circle at top left, #fffaf3, #f5efe9, #e7dbcf);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: 2.6rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .hero-sub {
+      margin-top: 16px;
+      color: var(--muted);
+      max-width: 480px;
+    }
+    .hero-actions {
+      margin-top: 26px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .btn-dark { background: var(--accent); color: #fff; }
+    .btn-light { background: #fff; border: 1px solid #ccc; }
+
+    /* AI Placeholder Image */
+    .placeholder {
+      background: radial-gradient(circle at 20% 0%, #fffaf5, #f0e3d6, #c9b29f);
+      border-radius: 26px;
+      height: 280px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .placeholder::after {
+      content: "";
+      position: absolute;
+      inset: 14%;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    /* SERVICES */
+    .services-grid {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .card {
+      background: var(--light);
+      padding: 18px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card-img {
+      height: 120px;
+      border-radius: 14px;
+      background: radial-gradient(circle, #fffaf5, #f0e3d6, #c9b29f);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-img::after {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .card-title { margin-top: 12px; font-weight: 600; }
+    .card-text { margin-top: 8px; color: var(--muted); font-size: .9rem; }
+    .card-btn {
+      margin-top: 12px;
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #ccc;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      height: 160px;
+      border-radius: 18px;
+      background: radial-gradient(circle, #fffaf5, #f0e3d6, #c9b29f);
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 16%;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    /* BOOKING */
+    .booking {
+      background: var(--wood);
+    }
+    .booking-box {
+      background: #fff;
+      padding: 26px;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--accent);
+      color: #fff;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-link {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: .82rem;
+      letter-spacing: .12em;
+    }
+
+    /* MOBILE */
+    @media(max-width: 900px){
+      .hero-grid,
+      .services-grid,
+      .gallery-grid,
+      .booking-box {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="inner hero-grid">
+      <div>
+        <h1 class="hero-title">Kevinci Beauty Nails</h1>
+        <p class="hero-sub">
+          Luxury Gel X, structured manicures, nail art, and pedicures — crafted with intention, comfort, and long‑wear in mind.
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://kevincibeauty.setmore.com/" class="btn btn-dark">Book Nails →</a>
+          <a href="#services" class="btn btn-light">View Services</a>
+        </div>
+      </div>
+
+      <div class="placeholder"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="inner">
+      <h2 class="section-title">Services</h2>
+
+      <div class="services-grid">
+
+        <div class="card">
+          <div class="card-img"></div>
+          <div class="card-title">Gel X Extensions</div>
+          <div class="card-text">Lightweight, sculpted, modern shapes with a seamless finish.</div>
+          <a href="https://kevincibeauty.setmore.com/" class="card-btn">Book Gel X →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-img"></div>
+          <div class="card-title">Structured Manicure</div>
+          <div class="card-text">Builder gel strength, clean prep, natural length.</div>
+          <a href="https://kevincibeauty.setmore.com/" class="card-btn">Book Structured →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-img"></div>
+          <div class="card-title">Nail Art</div>
+          <div class="card-text">Minimal, chrome, abstract, or full freestyle sets.</div>
+          <a href="https://kevincibeauty.setmore.com/" class="card-btn">Book Nail Art →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-img"></div>
+          <div class="card-title">Pedicure</div>
+          <div class="card-text">Clean, relaxing, spa‑inspired pedicures.</div>
+          <a href="https://kevincibeauty.setmore.com/" class="card-btn">Book Pedicure →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <div class="inner">
+      <h2 class="section-title">Gallery</h2>
+
+      <div class="gallery-grid">
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section booking">
+    <div class="inner booking-box">
+      <div>
+        <h3>Book Your Next Set</h3>
+        <p>Choose your service, pick your time, and enjoy a luxury nail experience.</p>
+        <a href="https://kevincibeauty.setmore.com/" class="btn btn-dark" style="margin-top: 14px;">Find Time →</a>
+      </div>
+
+      <div class="placeholder"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>Kevinci Beauty Nails · Las Vegas</div>
+      <div>
+        <a href="https://kevincibeauty.setmore.com/" class="footer-link">Book</a>
+        <a href="https://instagram.com/kevincibeauty" class="footer-link">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
